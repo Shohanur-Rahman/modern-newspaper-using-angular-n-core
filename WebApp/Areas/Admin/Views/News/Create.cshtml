@@ -1,0 +1,221 @@
+﻿@model App.Models.VMModels.VMNewsModel
+@{
+    ViewData["Title"] = "Create News";
+}
+
+<div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">Create News</h4>
+
+        <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a asp-action="" asp-area="admin" asp-controller="dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item"><a asp-action="" asp-area="admin" asp-controller="news">News</a></li>
+                <li class="breadcrumb-item active">Create News</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+<form class="w-100 row" method="post" asp-action="create" asp-area="admin" asp-controller="news" enctype="multipart/form-data">
+
+    <div class="col-8">
+        @Html.AntiForgeryToken()
+        <div class="card">
+            <h5 class="card-header">Create News</h5>
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Featured Image</label>
+                            <div class="file-upload">
+                                <img src="~/back/No_Image_Available.jpg" id="imgFeaturedImage" />
+                                <!--place input file last !-->
+                                <input type="file" id="filePostImage" class="form-control image_preview" preview="#imgFeaturedImage" asp-for="Image" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Breaking News</label>
+                            <br>
+                            <input type="checkbox" id="chkIsPublished" class="k_switch" asp-for="IsBreaking" />
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="form-group">
+                    <label>Parent</label>
+                    @Html.DropDownListFor(m => m.CategoryId, new SelectList(ViewBag.Categories, "Id", "CategoryName"), "-- Please Select --", new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="simpleinput" class="form-control" placeholder="Enter category name" asp-for="Title" required>
+                </div>
+                <div class="form-group">
+                    <label>Short Description</label>
+                    <textarea asp-for="ShortDescription" class="form-control" placeholder="Enter short description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea asp-for="Description" id="news-description" class="form-control" placeholder="Enter short description" required></textarea>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-4">
+
+        <div class="card">
+            <h5 class="card-header">Make Sure</h5>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Publish</label>
+                    <br>
+                    <input type="checkbox" id="chkIsPublished" class="k_switch" asp-for="IsPublished" />
+                </div>
+
+                <a asp-action="" asp-area="admin" asp-controller="news" class="btn btn-danger waves-effect waves-light">Back</a>
+                <button type="submit" class="btn btn-success waves-effect waves-light float-right" onclick="SetCheckboxValue()">Save</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="chkCategory_@category.Id" name="categories" value="@category.Id">
+                        <label class="custom-control-label" for="chkCategory_@category.Id">@category.CategoryName</label>
+                    </div>
+                }
+
+                @Html.HiddenFor(m => m.Categories, new { @id = "catListValues" })
+
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Tags</h5>
+            <div class="card-body">
+                @foreach (var tag in ViewBag.tags)
+                {
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="chkTag_@tag.Id" name="tags" value="@tag.Id">
+                        <label class="custom-control-label" for="chkTag_@tag.Id">@tag.TagName</label>
+                    </div>
+                }
+
+                @Html.HiddenFor(m => m.Tags, new { @id = "tagListValues" })
+
+            </div>
+        </div>
+
+
+
+    </div>
+</form>
+<script type="text/javascript">
+
+    function SetCheckboxValue(arg) {
+
+        
+        var categories = []
+        //Iterating the collection of checkboxes which checked marked  
+        $('input[name=categories]').each(function () {
+            if (this.checked) {
+                categories.push($(this).val());
+            }
+        });
+        //assign set value to hidden field   
+        $('#catListValues').val(categories);
+
+        
+
+        var tags = []
+        //Iterating the collection of checkboxes which checked marked  
+        $('input[name=tags]').each(function () {
+            if (this.checked) {
+                tags.push($(this).val())
+            }
+        });
+
+        //assign set value to hidden field   
+        $('#tagListValues').val(tags);
+    }  
+
+    $(document).ready(function () {
+        $("#chkIsPublished").kendoSwitch({
+            messages: {
+                checked: "YES",
+                unchecked: "NO"
+            }
+        });
+
+
+        var editor = $("#news-description").kendoEditor({
+            resizable: {
+                content: true,
+                toolbar: true
+            },
+            tools: [
+                "bold",
+                "italic",
+                "underline",
+                "justifyLeft",
+                "justifyCenter",
+                "justifyRight",
+                "insertUnorderedList",
+                "createLink",
+                "unlink",
+                "insertImage",
+                "tableWizard",
+                "createTable",
+                "addRowAbove",
+                "addRowBelow",
+                "addColumnLeft",
+                "addColumnRight",
+                "deleteRow",
+                "deleteColumn",
+                "mergeCellsHorizontally",
+                "mergeCellsVertically",
+                "splitCellHorizontally",
+                "splitCellVertically",
+                "tableAlignLeft",
+                "tableAlignCenter",
+                "tableAlignRight",
+                "formatting",
+                {
+                    name: "fontName",
+                    items: [
+                        { text: "Andale Mono", value: "Andale Mono" },
+                        { text: "Arial", value: "Arial" },
+                        { text: "Arial Black", value: "Arial Black" },
+                        { text: "Book Antiqua", value: "Book Antiqua" },
+                        { text: "Comic Sans MS", value: "Comic Sans MS" },
+                        { text: "Courier New", value: "Courier New" },
+                        { text: "Georgia", value: "Georgia" },
+                        { text: "Helvetica", value: "Helvetica" },
+                        { text: "Impact", value: "Impact" },
+                        { text: "Symbol", value: "Symbol" },
+                        { text: "Tahoma", value: "Tahoma" },
+                        { text: "Terminal", value: "Terminal" },
+                        { text: "Times New Roman", value: "Times New Roman" },
+                        { text: "Trebuchet MS", value: "Trebuchet MS" },
+                        { text: "Verdana", value: "Verdana" },
+                    ]
+                },
+                "fontSize",
+                "foreColor",
+                "backColor",
+            ]
+        });
+    })
+</script>

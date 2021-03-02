@@ -1,0 +1,96 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsModel>
+
+@{
+    ViewData["Title"] = "News";
+}
+
+<div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">News</h4>
+
+        <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a asp-action="" asp-area="admin" asp-controller="dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item active">News</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card">
+        <h5 class="card-header">News</h5>
+        <div class="card-body">
+            <table id="grid">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Published</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                <img src="@Url.Content(string.IsNullOrEmpty(item.FeaturedImage) == false ? item.FeaturedImage : "~/back/No_Image_Available.jpg")" id="imgFeaturedImage" class="grid-image" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @item.CreatedDate.Value.ToString("MM ddd yyyy (hh:mm tt)")
+                            </td>
+                            <td>
+                                <i class="mdi @((item.IsPublished == true) ? "mdi-check-bold" : "mdi-close-thick")"></i>
+                            </td>
+                            <td>
+                                <a asp-action="edit" asp-route-id="@item.Id" asp-area="admin" asp-controller="news" class="btn-grid bg-success"><i class="mdi mdi-content-save-edit"></i></a>
+                                <a asp-action="delete" asp-route-id="@item.Id" asp-area="admin" asp-controller="news" class="btn-grid bg-danger"><i class="mdi mdi-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn vertical">
+    <a asp-action="create" asp-area="admin" asp-controller="news" class="btn-floating btn-large red pulse" title="Add News">
+        <i class="bx bx-plus"></i>
+    </a>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                pageSize: 20,
+            },
+            sortable: true,
+            height: 350,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+        });
+    });
+
+</script>

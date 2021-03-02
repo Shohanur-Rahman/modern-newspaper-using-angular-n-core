@@ -1,0 +1,88 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsChildModel>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">News Categories</h4>
+
+        <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a asp-action="" asp-area="admin" asp-controller="dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item active">News Categories</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card">
+        <h5 class="card-header">News Categories</h5>
+        <div class="card-body">
+            <table id="grid">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>News</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalNews)
+                        </td>
+                        <td>
+                            <a asp-action="edit" asp-route-id="@item.Id" asp-area="admin" asp-controller="categories" class="btn-grid bg-success"><i class="mdi mdi-content-save-edit"></i></a>
+                            <a asp-action="delete" asp-route-id="@item.Id" asp-area="admin" asp-controller="categories" class="btn-grid bg-danger"><i class="mdi mdi-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn vertical">
+    <a asp-action="create" asp-area="admin" asp-controller="categories" class="btn-floating btn-large red pulse" title="Add Category">
+        <i class="bx bx-plus"></i>
+    </a>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                pageSize: 20,
+            },
+            sortable: true,
+            height: 350,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+        });
+    });
+
+</script>

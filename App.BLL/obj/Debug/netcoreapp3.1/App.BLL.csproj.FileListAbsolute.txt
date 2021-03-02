@@ -1,0 +1,14 @@
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.deps.json
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.dll
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.pdb
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.Common.dll
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.Models.dll
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.Common.pdb
+F:\dot net\CompleteBlog\App.BLL\bin\Debug\netcoreapp3.1\App.Models.pdb
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csprojAssemblyReference.cache
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.AssemblyInfoInputs.cache
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.AssemblyInfo.cs
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CoreCompileInputs.cache
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CopyComplete
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.dll
+F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.pdb

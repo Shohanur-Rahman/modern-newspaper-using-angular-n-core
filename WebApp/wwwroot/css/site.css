@@ -1,0 +1,15 @@
+﻿.login-box{
+    max-width: 400px;
+    margin: 50px auto;
+    background: #e8e8e8;
+    padding: 40px 20px;
+}
+.login-header{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login-header small{
+    font-size: 14px;
+}

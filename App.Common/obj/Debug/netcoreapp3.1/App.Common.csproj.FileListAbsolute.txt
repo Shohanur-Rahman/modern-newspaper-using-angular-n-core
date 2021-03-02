@@ -1,0 +1,8 @@
+F:\dot net\CompleteBlog\App.Common\bin\Debug\netcoreapp3.1\App.Common.deps.json
+F:\dot net\CompleteBlog\App.Common\bin\Debug\netcoreapp3.1\App.Common.dll
+F:\dot net\CompleteBlog\App.Common\bin\Debug\netcoreapp3.1\App.Common.pdb
+F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.AssemblyInfoInputs.cache
+F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.AssemblyInfo.cs
+F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.csproj.CoreCompileInputs.cache
+F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.dll
+F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.pdb

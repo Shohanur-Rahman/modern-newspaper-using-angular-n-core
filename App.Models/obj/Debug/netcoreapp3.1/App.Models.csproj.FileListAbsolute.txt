@@ -1,0 +1,12 @@
+F:\dot net\CompleteBlog\App.Models\bin\Debug\netcoreapp3.1\App.Models.deps.json
+F:\dot net\CompleteBlog\App.Models\bin\Debug\netcoreapp3.1\App.Models.runtimeconfig.json
+F:\dot net\CompleteBlog\App.Models\bin\Debug\netcoreapp3.1\App.Models.runtimeconfig.dev.json
+F:\dot net\CompleteBlog\App.Models\bin\Debug\netcoreapp3.1\App.Models.dll
+F:\dot net\CompleteBlog\App.Models\bin\Debug\netcoreapp3.1\App.Models.pdb
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.csprojAssemblyReference.cache
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.AssemblyInfoInputs.cache
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.AssemblyInfo.cs
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.csproj.CoreCompileInputs.cache
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.dll
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.pdb
+F:\dot net\CompleteBlog\App.Models\obj\Debug\netcoreapp3.1\App.Models.genruntimeconfig.cache
