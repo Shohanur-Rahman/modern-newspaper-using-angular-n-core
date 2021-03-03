@@ -355,6 +355,7 @@ namespace App.BLL.BLLManager
                                       FeaturedImage = n.FeaturedImage,
                                       CategoryId = n.CategoryId,
                                       IsPublished = n.IsPublished,
+                                      IsBreaking = n.IsBreaking,
                                       Tags = new[] { string.Join(",", tags) },
                                       Categories = new[] { string.Join(",", categories) }
                                   }).FirstOrDefaultAsync();
@@ -445,54 +446,11 @@ namespace App.BLL.BLLManager
             try
             {
 
-                NewsPost news = new NewsPost();
-                news.Title = model.Title;
-                news.IsPublished = model.IsPublished;
-                news.ShortDescription = model.ShortDescription;
-                news.CategoryId = model.CategoryId;
-                news.Description = model.Description;
-                news.FeaturedImage = model.FeaturedImage;
-                news.CreatedDate = DateTime.Now;
-                news.CreatedId = model.CreatedId;
-                news.TitleSlug = SlugGeneretor.GenerateSlug(model.Title);
-
+                NewsPost news = MapNewsPost(new NewsPost(), model);
                 _context.NewsPost.Add(news);
                 await _context.SaveChangesAsync();
 
-
-                /*
-                 * 
-                 * Save category mapper
-                 * 
-                 */
-
-                //string[] categories = model.Categories.Split(",");
-                foreach (var cat in model.Categories)
-                {
-                    if (string.IsNullOrEmpty(cat) == false && Int64.TryParse(cat, out long catId))
-                    {
-                        NewsCategoryMapper catMapper = new NewsCategoryMapper();
-                        catMapper.NewsId = news.Id;
-                        catMapper.CategoryId = catId;
-                        _context.NewsCategoryMapper.Add(catMapper);
-                        await _context.SaveChangesAsync();
-                    }
-                }
-
-
-                //string[] tags = model.Tags.Split("#");
-                foreach (var tag in model.Tags)
-                {
-                    ;
-                    if (string.IsNullOrEmpty(tag) == false && Int64.TryParse(tag, out long tagId))
-                    {
-                        NewsTagMapper tagMapper = new NewsTagMapper();
-                        tagMapper.NewsId = news.Id;
-                        tagMapper.TagId = tagId;
-                        _context.NewsTagMapper.Add(tagMapper);
-                        await _context.SaveChangesAsync();
-                    }
-                }
+                bool status = await SaveOrUpdateNewsTagsAndCategoryMapper(news.Id, model);
 
                 return result = ResponseMapping.GetResponseMessage(news, (int)ResponseStatus.Success, ConstantMessaages.SuccessMessage);
 
@@ -584,74 +542,11 @@ namespace App.BLL.BLLManager
                 {
 
 
-                    news.Title = model.Title;
-                    news.IsPublished = model.IsPublished;
-                    news.ShortDescription = model.ShortDescription;
-                    news.Description = model.Description;
-                    news.CategoryId = model.CategoryId;
-                    news.IsBreaking = model.IsBreaking;
-                    news.FeaturedImage = (string.IsNullOrEmpty(model.FeaturedImage)==false)? model.FeaturedImage: news.FeaturedImage;
-                    news.CreatedDate = DateTime.Now;
-                    news.CreatedId = model.EditedId;
-
+                    news = MapNewsPost(news, model);
+                    _context.Entry(news).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
 
-
-                    /*
-                     * 
-                     * Save category mapper
-                     * 
-                     */
-
-                    var listOfCategories = await _context.NewsCategoryMapper.Where(n => n.NewsId == model.Id).ToListAsync();
-
-                    foreach (var map in listOfCategories)
-                    {
-                        _context.NewsCategoryMapper.Remove(map);
-                        await _context.SaveChangesAsync();
-                    }
-
-                    //string[] categories = model.Categories.Split("#");
-                    foreach (var cat in model.Categories)
-                    {
-                        if (string.IsNullOrEmpty(cat) == false && Int64.TryParse(cat, out long catId))
-                        {
-                            NewsCategoryMapper catMapper = new NewsCategoryMapper();
-                            catMapper.NewsId = news.Id;
-                            catMapper.CategoryId = catId;
-                            _context.NewsCategoryMapper.Add(catMapper);
-                            await _context.SaveChangesAsync();
-                        }
-                    }
-
-
-                    /*
-                     * 
-                     * Save Tag Mapper
-                     * 
-                     */
-
-
-                    var listOfTags = await _context.NewsTagMapper.Where(n => n.NewsId == model.Id).ToListAsync();
-
-                    foreach (var map in listOfTags)
-                    {
-                        _context.NewsTagMapper.Remove(map);
-                        await _context.SaveChangesAsync();
-                    }
-
-                    //string[] tags = model.Tags.Split("#");
-                    foreach (var tag in model.Tags)
-                    {
-                        if (string.IsNullOrEmpty(tag) == false && Int64.TryParse(tag, out long tagId))
-                        {
-                            NewsTagMapper tagMapper = new NewsTagMapper();
-                            tagMapper.NewsId = news.Id;
-                            tagMapper.TagId = tagId;
-                            _context.NewsTagMapper.Add(tagMapper);
-                            await _context.SaveChangesAsync();
-                        }
-                    }
+                    bool status = await SaveOrUpdateNewsTagsAndCategoryMapper(news.Id, model);
 
                     return result = ResponseMapping.GetResponseMessage(news, (int)ResponseStatus.Success, ConstantMessaages.SuccessMessage);
 
@@ -724,6 +619,96 @@ namespace App.BLL.BLLManager
             }
         }
         #endregion
+
+
+        private NewsPost MapNewsPost(NewsPost news, VMNewsModel model)
+        {
+            news.Id = model.Id;
+            news.Title = (!string.IsNullOrEmpty(model.Title)) ? model.Title : news.Title;
+            news.TitleSlug = (news.Id > 0) ? news.TitleSlug : SlugGeneretor.GenerateSlug(model.Title);
+            news.IsPublished = model.IsPublished;
+            news.ShortDescription = (!string.IsNullOrEmpty(model.ShortDescription)) ? model.ShortDescription : news.ShortDescription;
+            news.Description = (!string.IsNullOrEmpty(model.Description)) ? model.Description : news.Description;
+            news.CategoryId = model.CategoryId;
+            news.IsBreaking = model.IsBreaking;
+            news.FeaturedImage = (!string.IsNullOrEmpty(model.FeaturedImage)) ? model.FeaturedImage : news.FeaturedImage;
+            news.CreatedDate = (model.CreatedDate != null) ? model.CreatedDate : news.CreatedDate;
+            news.CreatedId = (model.CreatedId != null) ? model.CreatedId : news.CreatedId;
+            news.EditedDate = (model.EditedDate != null) ? model.EditedDate : news.EditedDate;
+            news.EditedId = (model.EditedId != null) ? model.EditedId : news.EditedId;
+
+            return news;
+        }
+
+        private async Task<bool> SaveOrUpdateNewsTagsAndCategoryMapper(long newsId, VMNewsModel model)
+        {
+            bool isUpdated = false;
+            try
+            {
+                /*
+                     * 
+                     * Save category mapper
+                     * 
+                     */
+
+                var listOfCategories = await _context.NewsCategoryMapper.Where(n => n.NewsId == newsId).ToListAsync();
+
+                foreach (var map in listOfCategories)
+                {
+                    _context.NewsCategoryMapper.Remove(map);
+                    await _context.SaveChangesAsync();
+                }
+
+                //string[] categories = model.Categories.Split("#");
+                foreach (var cat in model.Categories)
+                {
+                    if (string.IsNullOrEmpty(cat) == false && Int64.TryParse(cat, out long catId))
+                    {
+                        NewsCategoryMapper catMapper = new NewsCategoryMapper();
+                        catMapper.NewsId = newsId;
+                        catMapper.CategoryId = catId;
+                        _context.NewsCategoryMapper.Add(catMapper);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+
+
+                /*
+                 * 
+                 * Save Tag Mapper
+                 * 
+                 */
+
+
+                var listOfTags = await _context.NewsTagMapper.Where(n => n.NewsId == newsId).ToListAsync();
+
+                foreach (var map in listOfTags)
+                {
+                    _context.NewsTagMapper.Remove(map);
+                    await _context.SaveChangesAsync();
+                }
+
+                //string[] tags = model.Tags.Split("#");
+                foreach (var tag in model.Tags)
+                {
+                    if (string.IsNullOrEmpty(tag) == false && Int64.TryParse(tag, out long tagId))
+                    {
+                        NewsTagMapper tagMapper = new NewsTagMapper();
+                        tagMapper.NewsId = newsId;
+                        tagMapper.TagId = tagId;
+                        _context.NewsTagMapper.Add(tagMapper);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message.ToString();
+                throw ex;
+            }
+
+            return isUpdated;
+        }
 
 
     }

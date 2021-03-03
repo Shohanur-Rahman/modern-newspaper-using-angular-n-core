@@ -20,5 +20,15 @@ namespace WebApp.ServiceManager
         {
             return await _newsFront.GetBreakingNews();
         }
+
+        public async Task<ResponseMessage> GetNewsDetailsByCategoryAndTitle(string catSlug, string titleSlug)
+        {
+            return await _newsFront.GetNewsDetailsByCategoryAndTitle(catSlug, titleSlug);
+        }
+
+        public async Task<ResponseMessage> GetRelatedNewsByCategory(long categoryId)
+        {
+            return await _newsFront.GetRelatedNewsByCategory(categoryId);
+        }
     }
 }

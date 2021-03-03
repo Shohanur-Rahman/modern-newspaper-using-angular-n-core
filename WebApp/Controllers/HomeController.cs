@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using WebApp.IServiceManager;
 using WebApp.Models;
 
@@ -26,6 +27,7 @@ namespace WebApp.Controllers
             var breakingNewsResponse = await _newService.GetBreakingNews();
             IList<VMBreakingNews> breakingNews = breakingNewsResponse.data as IList<VMBreakingNews>;
             ViewBag.BreakingNews = breakingNews;
+
             return View();
         }
 
@@ -39,5 +41,6 @@ namespace WebApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

@@ -153,6 +153,9 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Ind
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Edit.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Index.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Profile\Activities.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Profile\ChangePassword.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Profile\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Edit.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Index.cshtml.g.cs
@@ -166,6 +169,14 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Accounts\Login.cshtm
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Accounts\Register.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\Article.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_CommentsForm.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_NewsComments.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_NewsDescription.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_NewsTags.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_RelatedNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_ReporterLinked.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_BreakingNews.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

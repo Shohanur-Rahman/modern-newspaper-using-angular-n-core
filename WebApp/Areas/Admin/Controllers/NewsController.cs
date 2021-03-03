@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using WebApp.Constants;
@@ -18,9 +19,11 @@ namespace WebApp.Areas.Admin.Controllers
     public class NewsController : Controller
     {
         private readonly INewsServiceManager _newsService;
+        long userId;
         public NewsController(INewsServiceManager newsService)
         {
             _newsService = newsService;
+
         }
 
         // GET: NewsController
@@ -65,6 +68,11 @@ namespace WebApp.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
+                    var claimsId = HttpContext.User.FindFirst(ClaimTypes.Sid).Value;
+                    Int64.TryParse(claimsId, out userId);
+                    collection.CreatedId = userId;
+                    
                     var response = await _newsService.SaveUpdateNews(collection);
 
                     if (response.isSuccess == true)
@@ -112,6 +120,10 @@ namespace WebApp.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
+                    var claimsId = HttpContext.User.FindFirst(ClaimTypes.Sid).Value;
+                    Int64.TryParse(claimsId, out userId);
+                    collection.EditedId = userId;
                     var response = await _newsService.SaveUpdateNews(collection);
 
                     if (response.isSuccess == true)

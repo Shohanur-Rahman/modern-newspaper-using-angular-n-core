@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,6 +48,7 @@ namespace WebApp
                 });
 
 
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
@@ -76,7 +78,7 @@ namespace WebApp
                 // authontication schems, it elevates the
                 //level of cookie security for other types of apps
 
-                MinimumSameSitePolicy= SameSiteMode.Strict
+                MinimumSameSitePolicy = SameSiteMode.Strict
             });
 
             app.UseAuthentication();
@@ -92,8 +94,16 @@ namespace WebApp
                     pattern: "admin/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
+                   name: "News",
+                   pattern: "news/{category}/{*article}",
+                   defaults: new { controller = "News", action = "Article" });
+
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+               
             });
         }
     }

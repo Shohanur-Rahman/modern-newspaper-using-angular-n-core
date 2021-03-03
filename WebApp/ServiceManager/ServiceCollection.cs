@@ -17,6 +17,7 @@ namespace WebApp.ServiceManager
             services.AddTransient<INewsServiceManager, NewsServiceManager>();
             services.AddTransient<IUploaderHelper, UploadHelper>();
             services.AddTransient<INewsFrontService, NewsFrontServiceManager>();
+            services.AddTransient<IUserProfileService, UserProfileService>();
             return services;
         }
     }

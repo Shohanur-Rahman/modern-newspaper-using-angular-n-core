@@ -9,5 +9,7 @@ namespace App.BLL.IBLLManager
     public interface IFrontNewsBLLManager
     {
         Task<ResponseMessage> GetBreakingNews();
+        Task<ResponseMessage> GetNewsDetailsByCategoryAndTitle(string catSlug, string titleSlug);
+        Task<ResponseMessage> GetRelatedNewsByCategory(long categoryId);
     }
 }

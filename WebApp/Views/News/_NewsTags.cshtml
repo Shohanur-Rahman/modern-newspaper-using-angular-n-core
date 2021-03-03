@@ -1,0 +1,10 @@
+﻿@model App.Models.VMModels.VMNewsDetailsModel
+<div class="content__tags mt-30">
+    <span>Post Tags:</span>
+    <span class="content__tags-list">
+        @foreach (var tag in Model.ListOfTag)
+        {
+            <a href="#">@tag.Name</a>
+        }
+    </span>
+</div>

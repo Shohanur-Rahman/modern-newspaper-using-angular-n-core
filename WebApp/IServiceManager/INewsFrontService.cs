@@ -9,5 +9,7 @@ namespace WebApp.IServiceManager
     public interface INewsFrontService
     {
         Task<ResponseMessage> GetBreakingNews();
+        Task<ResponseMessage> GetNewsDetailsByCategoryAndTitle(string catSlug, string titleSlug);
+        Task<ResponseMessage> GetRelatedNewsByCategory(long categoryId);
     }
 }

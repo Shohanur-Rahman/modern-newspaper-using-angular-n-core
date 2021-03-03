@@ -78,9 +78,11 @@ namespace WebApp.ServiceManager
                     model.FeaturedImage = _uploader.UploadFile(model.Image, "news");
                 }
 
-                if (model.Id > 0)
+                if (model.Id > 0) {
+                    model.EditedDate = DateTime.Now;
                     return await _newsBLL.UpdateNews(model);
-
+                }
+                model.CreatedDate = DateTime.Now;
                 return await _newsBLL.SaveNews(model);
 
             }

@@ -103,6 +103,21 @@
     max-height: 70px;
     max-width: 100px;
 }
+
 .child-group {
     padding-left: 15px;
 }
+
+a.link-btn {
+    text-transform: uppercase;
+    color: #f8cbcb;
+    padding: 5px 10px;
+    display: block;
+    background: #333;
+    margin-right: 5px;
+    text-align: center;
+}
+
+    a.link-btn:hover {
+        color: #fff;
+    }

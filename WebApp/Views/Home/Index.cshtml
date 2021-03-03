@@ -29,18 +29,9 @@
                         @foreach (var item in ViewBag.BreakingNews)
                         {
                             <li>
-                                <a asp-controller="">@item.Title</a>
+                                <a href="~/news/@item.CategorySlug/@item.TitleSlug">@item.Title</a>
                             </li>
                         }
-                        <li>
-                            <a href="#">On the other hand we denounce with righteous indignation and dislike men who are so beguiled</a>
-                        </li>
-                        <li>
-                            <a href="#">Trump’s Inaccurate Claims About High ways the world, Immigration and Beyoncé.</a>
-                        </li>
-                        <li>
-                            <a href="#">Moving From Buyer to Seller, Major League Soccer Revenue In The World Wide.</a>
-                        </li>
                     </ul>
                     <!-- Breaking Newsticker Start -->
                 </div>

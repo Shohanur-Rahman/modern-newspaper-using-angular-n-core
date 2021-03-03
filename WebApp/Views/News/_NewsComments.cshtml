@@ -1,0 +1,69 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsComments>
+<div class="post-comments mt-30">
+    <div class="section-title mb-30">
+        <h2>@Model.Count() Comments</h2>
+
+    </div>
+    <div class="latest-comments">
+        <ul>
+            @foreach (var comments in Model)
+            {
+                <li>
+                    <div class="comments-box">
+                        <div class="comments-avatar">
+                            <img src="@Url.Content(string.IsNullOrEmpty(comments.Commentor.ProfilePicture) == false ? comments.Commentor.ProfilePicture : "~/back/No_Image_Available.jpg")" alt="@comments.Commentor.DisplayName" />
+                        </div>
+                        <div class="comments-text">
+                            <div class="avatar-name">
+                                <h5>@comments.Commentor.DisplayName</h5>
+                                <span>@comments.CommentsDate.Value.ToString("dd MMM yyyy - hh:mm tt")</span>
+                            </div>
+                            <p>
+                                @comments.Comments
+                            </p>
+                            <a href="#"><i class="fas fa-reply-all"></i> Reply</a>
+                        </div>
+                    </div>
+                    <ul class="comments-reply">
+                        @foreach (var reply in comments.ListOfReply)
+                        {
+                            <li>
+                                <div class="comments-box">
+                                    <div class="comments-avatar">
+                                        <img src="@Url.Content(string.IsNullOrEmpty(reply.Commentor.ProfilePicture) == false ? reply.Commentor.ProfilePicture : "~/back/No_Image_Available.jpg")" alt="@reply.Commentor.DisplayName" />
+                                    </div>
+                                    <div class="comments-text">
+                                        <div class="avatar-name">
+                                            <h5>@reply.Commentor.DisplayName</h5>
+                                            <span>@reply.CommentsDate.Value.ToString("dd MMM yyyy - hh:mm tt")</span>
+                                        </div>
+                                        <p>
+                                            @reply.Comments
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                        <li>
+                            <div class="post-comments-form mt-40 mb-40">
+                                <div class="section-title mb-30">
+                                    <h2>Recent Comments</h2>
+                                </div>
+                                <partial name="_CommentsForm" view-data='@new ViewDataDictionary(this.ViewData) { { "NewsId", comments} }' />
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+            }
+        </ul>
+
+
+        <!-- post-comments-form -->
+        <div class="post-comments-form mt-40 mb-40">
+            <partial name="_CommentsForm" view-data='@new ViewDataDictionary(this.ViewData) { { "NewsId", "5"} }' />
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model App.Models.VMModels.UserLinkedProfile
+<!-- author-meta -->
+<div class="author-meta  mt-60">
+    <div class="media flex-column flex-md-row">
+        <div class="media-left">
+            <a href="~/profile/@Model.ProfileId">
+                <img src="@Url.Content(string.IsNullOrEmpty(Model.ProfilePicture) == false ? Model.ProfilePicture : "~/back/No_Image_Available.jpg")" alt="@Model.ProfileId" />
+            </a>
+        </div>
+        <div class="media-body">
+            <span class="media-heading">
+                <a href="~/profile/@Model.ProfileId">@Model.DisplayName</a>
+            </span>
+            <p>
+                @Model.UserBio
+            </p>
+        </div>
+    </div>
+</div>

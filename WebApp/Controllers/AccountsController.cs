@@ -74,6 +74,7 @@ namespace WebApp.Controllers
 
                     var clims = new List<Claim>()
                     {
+                        new Claim(ClaimTypes.Sid, userObject.Id.ToString()),
                         new Claim(ClaimTypes.Name, userObject.Name),
                         new Claim(ClaimTypes.Email, userObject.Email),
                         new Claim(ClaimTypes.Role, (userObject.Role == null)? "User": userObject.Role.ToString())
@@ -98,7 +99,7 @@ namespace WebApp.Controllers
 
 
                     DisplayMessageHelper.SuccessMessageSetOrGet(this, true, ConstantUserMessages.REGISTRATION_SUCCESS);
-                    return RedirectToAction("", "dashboard", new { area="admin"});
+                    return RedirectToAction("", "dashboard", new { area = "admin" });
                 }
 
                 DisplayMessageHelper.ErrorMessageSetOrGet(this, true, response.message);
@@ -106,6 +107,14 @@ namespace WebApp.Controllers
             }
 
             return View("~/Views/Accounts/Login.cshtml");
+        }
+
+
+        [Route("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("", "");
         }
     }
 }

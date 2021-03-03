@@ -1,0 +1,15 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <form action="#">
+        <div class="row">
+            <div class="col-xl-12">
+                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Your Comments"></textarea>
+                <button class="btn brand-btn" type="submit">Send message</button>
+            </div>
+        </div>
+    </form>
+}
+else
+{
+    <a class="btn brand-btn" asp-action="login" asp-controller="accounts">Login First</a>
+}

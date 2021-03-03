@@ -1,0 +1,30 @@
+﻿@model App.Models.VMModels.VMNewsDetailsModel
+@using System.Web;
+<h2 class="details-title mb-15">@Model.Title</h2>
+
+<!-- meta -->
+<div class="postbox__text-meta pb-30">
+    <ul>
+        <li>
+            <i class="far fa-user-circle"></i>
+            <span>@Model.ReporterProfile.DisplayName</span>
+        </li>
+        <li>
+            <i class="fas fa-calendar-alt"></i>
+            <span>@Model.CreatedDate.Value.ToString("dd MMM yyyy")</span>
+        </li>
+        <li>
+            <i class="far fa-comment"></i>
+            <span>(@Model.ListOfComments.Count())</span>
+        </li>
+    </ul>
+</div>
+<!-- post-thumb -->
+<div class="post-thumb mb-25">
+    <img src="@Url.Content(string.IsNullOrEmpty(Model.FeaturedImage) == false ? Model.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@Model.Title" />
+</div>
+
+<!-- post-content -->
+<div class="post-content">
+    @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
+</div>
