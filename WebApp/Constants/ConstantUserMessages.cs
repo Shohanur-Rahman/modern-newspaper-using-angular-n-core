@@ -20,5 +20,7 @@ namespace WebApp.Constants
 
         public const string EMAIL_INVALID = "Your email doesn't matched.";
         public const string PASSWORD_CHANGED = "Your password has been updated.";
+
+        public const string COMMENT_SUCCESS = "Your comments in pending.";
     }
 }

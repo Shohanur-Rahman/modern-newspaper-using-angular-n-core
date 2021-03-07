@@ -1,4 +1,5 @@
 ﻿using App.Common.Response;
+using App.Models.VMModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace WebApp.IServiceManager
         Task<ResponseMessage> GetBreakingNews();
         Task<ResponseMessage> GetNewsDetailsByCategoryAndTitle(string catSlug, string titleSlug);
         Task<ResponseMessage> GetRelatedNewsByCategory(long categoryId);
+        Task<ResponseMessage> SaveUpdateNewsComment(VMNewsComments model);
+        Task<ResponseMessage> RecentThreeNews();
     }
 }

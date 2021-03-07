@@ -16,6 +16,7 @@ namespace App.BLL
             services.AddTransient<INewsBLLManager, NewsBLLManager>();
             services.AddTransient<IFrontNewsBLLManager, FrontNewsBLLManager>();
             services.AddTransient<IUserProfileBLLManager, UserProfileBLLManager>();
+            services.AddTransient<ICommentsBLLManager, CommentsBLLManager>();
             return services;
         }
     }

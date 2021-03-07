@@ -148,6 +148,9 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.RazorCoreGenerate.cache
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Edit.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Index.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Create.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Edit.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Create.cshtml.g.cs
@@ -177,6 +180,9 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_NewsTags.cshtm
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_RelatedNews.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_ReporterLinked.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_BreakingNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_HeroAreaNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsFirstThree.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsThirdPart.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

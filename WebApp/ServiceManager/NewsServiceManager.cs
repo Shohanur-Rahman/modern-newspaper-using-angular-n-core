@@ -82,6 +82,28 @@ namespace WebApp.ServiceManager
                     model.EditedDate = DateTime.Now;
                     return await _newsBLL.UpdateNews(model);
                 }
+
+                /*DateTime fromDate = new DateTime(2018, 7, 27, 12, 0, 0);
+                DateTime toDate = new DateTime(2021, 3, 4, 12, 0, 0);
+
+                string TestTitle = model.Title;
+
+                while (fromDate < toDate)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        model.Title = TestTitle + fromDate.ToString(" dd MM yyyy") + " number " + i.ToString();
+                        //var claimsId = HttpContext.User.FindFirst(ClaimTypes.Sid).Value;
+                        //Int64.TryParse(claimsId, out userId);
+                        model.CreatedDate = fromDate;
+
+                        model.CreatedDate = DateTime.Now;
+                        await _newsBLL.SaveNews(model);
+
+                        fromDate = fromDate.AddDays(1);
+                    }
+                }*/
+
                 model.CreatedDate = DateTime.Now;
                 return await _newsBLL.SaveNews(model);
 

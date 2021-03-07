@@ -41,6 +41,29 @@ namespace WebApp.ServiceManager
                 return _userBLL.UpdateUser(model);
             }
 
+
+            /*DateTime fromDate = new DateTime(2018, 12, 27, 12, 0, 0);
+
+            for (int i=0; i< 300; i++)
+            {
+                model.Name = "User " + i.ToString();
+                model.Email = "user" + i.ToString() + "@gmail.com";
+                model.CreatedDate = DateTime.Now;
+                model.CreatedId = 1;
+                if (i < 5)
+                    model.RoleId = 1;
+                else
+                    model.RoleId = 3;
+
+                model.CreatedDate = fromDate;
+                model.CreatedId = 1;
+                //model.RoleId = 3;
+
+                fromDate = fromDate.AddDays(1);
+
+                _userBLL.SaveUser(model);
+            }*/
+
             model.CreatedDate = DateTime.Now;
             model.CreatedId = 1;
             model.RoleId = 3;

@@ -10,7 +10,7 @@ namespace App.Models.AppContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
-
+            
         }
 
         public DbSet<Users> User { get; set; }

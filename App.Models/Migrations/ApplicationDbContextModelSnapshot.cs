@@ -95,6 +95,9 @@ namespace App.Models.Migrations
                     b.Property<long?>("EditedId")
                         .HasColumnType("bigint");
 
+                    b.Property<bool>("IsApprove")
+                        .HasColumnType("bit");
+
                     b.Property<long?>("NewsId")
                         .HasColumnType("bigint");
 

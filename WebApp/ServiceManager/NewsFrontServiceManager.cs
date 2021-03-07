@@ -1,5 +1,6 @@
 ﻿using App.BLL.IBLLManager;
 using App.Common.Response;
+using App.Models.VMModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using WebApp.IServiceManager;
 
 namespace WebApp.ServiceManager
 {
-    public class NewsFrontServiceManager: INewsFrontService
+    public class NewsFrontServiceManager : INewsFrontService
     {
         private readonly IFrontNewsBLLManager _newsFront;
         public NewsFrontServiceManager(IFrontNewsBLLManager newsFront)
@@ -29,6 +30,19 @@ namespace WebApp.ServiceManager
         public async Task<ResponseMessage> GetRelatedNewsByCategory(long categoryId)
         {
             return await _newsFront.GetRelatedNewsByCategory(categoryId);
+        }
+
+        public async Task<ResponseMessage> RecentThreeNews()
+        {
+            return await _newsFront.RecentThreeNews();
+        }
+
+        public async Task<ResponseMessage> SaveUpdateNewsComment(VMNewsComments model)
+        {
+            if (model.Id > 0)
+                return await _newsFront.UpdateNewsComment(model);
+            else
+                return await _newsFront.SaveNewsComment(model);
         }
     }
 }

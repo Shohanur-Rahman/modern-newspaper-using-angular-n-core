@@ -28,6 +28,16 @@ namespace WebApp.Controllers
             IList<VMBreakingNews> breakingNews = breakingNewsResponse.data as IList<VMBreakingNews>;
             ViewBag.BreakingNews = breakingNews;
 
+            var recentThreeNewsResponse = await _newService.RecentThreeNews();
+            IList<VMNewsFrontModel> recentThree = recentThreeNewsResponse.data as IList<VMNewsFrontModel>;
+            ViewBag.RecentThree = recentThree.Take(3).ToList();
+
+            ViewBag.TrendingNewsFirstThree = recentThree.Skip(3).Take(3).ToList();
+            ViewBag.TrendingNewsSecondTwo = recentThree.Skip(6).Take(2).ToList();
+            ViewBag.TrendingNewsThirdPart = recentThree.Skip(8).Take(7).ToList();
+
+            ViewBag.TrendingNewsFourthPart = recentThree.Skip(15).Take(3).ToList();
+
             return View();
         }
 

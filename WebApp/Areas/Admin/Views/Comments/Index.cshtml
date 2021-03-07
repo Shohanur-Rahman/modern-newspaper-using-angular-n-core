@@ -1,0 +1,91 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsComments>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-12">
+    <div class="page-title-box d-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">Comments</h4>
+        <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a asp-action="" asp-area="admin" asp-controller="dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item active">Comments</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card">
+        <h5 class="card-header">Comments</h5>
+        <div class="card-body">
+            <table id="grid">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Commentor</th>
+                        <th>Approve</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            <a asp-controller="profile" asp-action="details" asp-area="admin" asp-route-id="item.Id" class="link-btn" target="_blank">
+                                <span>@item.Commentor.DisplayName</span>
+                            </a>
+                        </td>
+                        <td>
+                            <i class="mdi @((item.IsApprove == true) ? "mdi-check-bold" : "mdi-close-thick")"></i>
+                        </td>
+                        <td>
+                            @item.CommentsDate.Value.ToString("dd MMM yyyy hh:mm tt")
+                        </td>
+                        <td>
+                            <a asp-action="edit" asp-route-id="@item.Id" asp-area="admin" asp-controller="comments" class="btn-grid bg-success"><i class="mdi mdi-content-save-edit"></i></a>
+                            <a asp-action="delete" asp-route-id="@item.Id" asp-area="admin" asp-controller="comments" class="btn-grid bg-danger"><i class="mdi mdi-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn vertical">
+    <a asp-action="create" asp-area="admin" asp-controller="comments" class="btn-floating btn-large red pulse" title="Add Comment">
+        <i class="bx bx-plus"></i>
+    </a>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            sortable: true,
+            height: 350,
+            dataSource: {
+                pageSize: 20,
+            },
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+        });
+    });
+
+</script>
+

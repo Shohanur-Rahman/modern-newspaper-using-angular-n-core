@@ -1,0 +1,17 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsFrontModel>
+
+@foreach (var news in Model)
+{
+    <div class="post__small mb-30">
+        <div class="post__small-thumb f-left">
+            <a href="~/news/@news.CategorySlug/@news.TitleSlug">
+                <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" class="tf_left" />
+            </a>
+        </div>
+        <div class="post__small-text fix pl-10">
+            <h4 class="title-13 pr-0">
+                <a href="~/news/@news.CategorySlug/@news.TitleSlug">@news.Title</a>
+            </h4>
+        </div>
+    </div>
+}
