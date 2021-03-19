@@ -39,7 +39,7 @@ namespace WebApp.Controllers
 
             homeNews.TrendingNewsFourthPart = recentThree.Skip(15).Take(3).ToList();
 
-            var responseVideoNews = await _newService.GetVideoNews(1, 2);
+            var responseVideoNews = await _newService.GetVideoNews(2, 1);
             IList<VMNewsFrontModel> videoNews = responseVideoNews.data as IList<VMNewsFrontModel>;
             homeNews.VideoNews = videoNews;
 
