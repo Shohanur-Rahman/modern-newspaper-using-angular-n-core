@@ -14,6 +14,7 @@ namespace App.Models.VMModels
         public string FeaturedImage { get; set; }
         public bool IsPublished { get; set; }
         public bool IsBreaking { get; set; }
+        public string VideoURL { get; set; }
         public long CategoryId { get; set; }
         public long? CreatedId { get; set; }
         public DateTime? CreatedDate { get; set; }

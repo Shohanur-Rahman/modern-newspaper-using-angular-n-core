@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@ViewData["Title"] - WebApp</title>
+    <title>@ViewData["Title"] - Newspaper</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,12 +63,25 @@
                                 <li>
                                     <a href="#">Contact Us</a>
                                 </li>
-                                <li>
-                                    <a href="@Url.Action("register","accounts")">Register</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("login","accounts")">Login</a>
-                                </li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("","dashboard", new { area="admin"})">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("logout","accounts")">Logout</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@Url.Action("register","accounts")">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("login","accounts")">Login</a>
+                                    </li>
+                                }
+
                             </ul>
                         </div>
                     </div>
@@ -96,7 +109,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-3 d-flex align-items-center justify-content-md-start justify-content-center">
                         <div class="header__logo text-center text-md-left mb-20">
-                            <a href="index.html">
+                            <a href="~/">
                                 <img src="~/front/assets/img/logo/logo.png" alt="Header Logo">
                             </a>
                         </div>

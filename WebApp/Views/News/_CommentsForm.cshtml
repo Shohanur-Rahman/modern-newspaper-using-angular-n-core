@@ -1,13 +1,23 @@
-﻿@if (User.Identity.IsAuthenticated)
+﻿@model App.Models.VMModels.VMNewsComments
+@using Microsoft.AspNetCore.Http;
+@using System;
+@{ 
+    var newsId = this.ViewData["NewsId"];
+    var commentsId = this.ViewData["CommentsId"];
+}
+@if (User.Identity.IsAuthenticated)
 {
-    <form action="#">
-        <div class="row">
-            <div class="col-xl-12">
-                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Your Comments"></textarea>
-                <button class="btn brand-btn" type="submit">Send message</button>
-            </div>
+<form method="post" asp-controller="news" asp-action="post-comments">
+    <input type="hidden" asp-for="NewsId" value="@newsId">
+    <input type="hidden" asp-for="ReplyId" value="@commentsId">
+    <input type="hidden" asp-for="CommentsPath" value="@Context.Request.Path">
+    <div class="row">
+        <div class="col-xl-12">
+            <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Your Comments"></textarea>
+            <button class="btn brand-btn" type="submit">Reply</button>
         </div>
-    </form>
+    </div>
+</form>
 }
 else
 {

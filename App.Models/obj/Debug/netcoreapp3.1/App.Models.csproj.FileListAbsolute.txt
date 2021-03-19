@@ -14,7 +14,6 @@ D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\bi
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\bin\Debug\netcoreapp3.1\App.Models.runtimeconfig.dev.json
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\bin\Debug\netcoreapp3.1\App.Models.dll
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\bin\Debug\netcoreapp3.1\App.Models.pdb
-D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\obj\Debug\netcoreapp3.1\App.Models.csprojAssemblyReference.cache
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\obj\Debug\netcoreapp3.1\App.Models.AssemblyInfoInputs.cache
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\obj\Debug\netcoreapp3.1\App.Models.AssemblyInfo.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Models\obj\Debug\netcoreapp3.1\App.Models.csproj.CoreCompileInputs.cache

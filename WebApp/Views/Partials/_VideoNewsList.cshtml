@@ -1,0 +1,46 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsFrontModel>
+<!-- video news -->
+<section class="cat-area pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title mb-30">
+                    <h2><a class="title-link" href="">video news</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var news in Model)
+            {
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="postbox mb-25">
+                        <div class="postbox__thumb" data-overlay="dark" data-opacity="2">
+                            <a href="">
+                                <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" />
+                            </a>
+                            <div class="video-play">
+                                <a href="@news.VideoURL" class="popup-video"><i class="fas fa-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="postbox__text pt-20">
+                            <h4 class="title-22 pr-0">
+                                <a href="~/news/@news.CategorySlug/@news.TitleSlug">@news.Title</a>
+                            </h4>
+                            <div class="postbox__text-meta pb-10">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>@news.CreatedDate.Value.ToString("dd MMM yyyy")</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- video news end -->

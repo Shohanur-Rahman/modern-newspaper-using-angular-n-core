@@ -7,6 +7,7 @@ namespace WebApp.Constants
 {
     public static class ConstantUserMessages
     {
+        public const string LOGIN_SUCCESS = "Your are successfully logged in.";
         public const string REGISTRATION_SUCCESS = "Your registration is completed.";
         public const string ROLE_CREATED = "A new role has been created successfully";
         public const string ROLE_UPDATED = "Role has been updated successfully";
@@ -20,5 +21,7 @@ namespace WebApp.Constants
 
         public const string EMAIL_INVALID = "Your email doesn't matched.";
         public const string PASSWORD_CHANGED = "Your password has been updated.";
+
+        public const string COMMENT_SUCCESS = "Your comments in pending.";
     }
 }

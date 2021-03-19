@@ -23,7 +23,7 @@
                     <partial name="_RelatedNews" model="@Model.RelatedNews" />
 
                     <!-- post-comments -->
-                    <partial name="_NewsComments" model="@Model.ListOfComments" />
+                    <partial name="_NewsComments" model="@Model.ListOfComments" view-data='@new ViewDataDictionary(this.ViewData) { { "NewsId", Model.Id} }' />
 
                 </div>
             </div>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsFrontModel>
+
+@foreach (var news in Model)
+{
+    <div class="postbox mb-25">
+        <div class="postbox__thumb">
+            <a href="~/news/@news.CategorySlug/@news.TitleSlug">
+                <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" />
+            </a>
+        </div>
+        <div class="postbox__text pt-10">
+            <div class="postbox__text-meta pb-10">
+                <ul>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>@news.CreatedDate.Value.ToString("dd MMM yyyy")</span>
+                    </li>
+                </ul>
+            </div>
+            <h4 class="pr-0">
+                <a href="~/news/@news.CategorySlug/@news.TitleSlug">@news.Title</a>
+            </h4>
+        </div>
+    </div>
+}

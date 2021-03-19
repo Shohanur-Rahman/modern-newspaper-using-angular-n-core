@@ -356,6 +356,7 @@ namespace App.BLL.BLLManager
                                       CategoryId = n.CategoryId,
                                       IsPublished = n.IsPublished,
                                       IsBreaking = n.IsBreaking,
+                                      VideoURL=n.VideoURL,
                                       Tags = new[] { string.Join(",", tags) },
                                       Categories = new[] { string.Join(",", categories) }
                                   }).FirstOrDefaultAsync();
@@ -631,6 +632,7 @@ namespace App.BLL.BLLManager
             news.Description = (!string.IsNullOrEmpty(model.Description)) ? model.Description : news.Description;
             news.CategoryId = model.CategoryId;
             news.IsBreaking = model.IsBreaking;
+            news.VideoURL = model.VideoURL;
             news.FeaturedImage = (!string.IsNullOrEmpty(model.FeaturedImage)) ? model.FeaturedImage : news.FeaturedImage;
             news.CreatedDate = (model.CreatedDate != null) ? model.CreatedDate : news.CreatedDate;
             news.CreatedId = (model.CreatedId != null) ? model.CreatedId : news.CreatedId;

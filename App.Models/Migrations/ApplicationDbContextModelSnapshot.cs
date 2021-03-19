@@ -95,6 +95,9 @@ namespace App.Models.Migrations
                     b.Property<long?>("EditedId")
                         .HasColumnType("bigint");
 
+                    b.Property<bool>("IsApprove")
+                        .HasColumnType("bit");
+
                     b.Property<long?>("NewsId")
                         .HasColumnType("bigint");
 
@@ -107,6 +110,27 @@ namespace App.Models.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("NewsComments");
+                });
+
+            modelBuilder.Entity("App.Models.Models.NewsPortalSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("HomeNewsCategory1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("HomeNewsCategory2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("HomeNewsCategory3")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NewsPortalSettings");
                 });
 
             modelBuilder.Entity("App.Models.Models.NewsPost", b =>
@@ -150,6 +174,9 @@ namespace App.Models.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleSlug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

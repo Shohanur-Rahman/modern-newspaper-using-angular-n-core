@@ -15,5 +15,6 @@ namespace App.Models.Models
         public long? ReplyId { get; set; }
         public long UserId { get; set; }
         public string Comments { get; set; }
+        public bool IsApprove { get; set; }
     }
 }

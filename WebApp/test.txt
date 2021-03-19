@@ -1,38 +1,88 @@
-﻿<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+﻿await (from news in _context.NewsPost
+                                             let newsId = (from queryId in _context.NewsPost
+                                                           where queryId.CategoryId == categoryId && queryId.TitleSlug == titleSlug
+                                                           select queryId.Id).FirstOrDefault()
+                                             where news.CategoryId == categoryId && news.TitleSlug == titleSlug
+                                             select new VMNewsDetailsModel()
+                                             {
+                                                 Id = news.Id,
+                                                 Title = news.Title,
+                                                 ShortDescription = news.ShortDescription,
+                                                 Description = news.Description,
+                                                 CreatedId = news.CreatedId,
+                                                 CreatedDate = news.CreatedDate,
+                                                 FeaturedImage = news.FeaturedImage,
+                                                 ListOfTag = (from listOfTagMapper in _context.NewsTagMapper
+                                                              join tags in _context.NewsTags on listOfTagMapper.TagId equals tags.Id
+                                                              where listOfTagMapper.NewsId == news.Id
+                                                              select tags).AsQueryable().ToList(),
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
+                                                 ListOfCategories = (from listOfCatMapper in _context.NewsCategoryMapper
+                                                                     join cat in _context.NewsCategories on listOfCatMapper.CategoryId equals cat.Id
+                                                                     where listOfCatMapper.NewsId == news.Id
+                                                                     select cat).AsQueryable().ToList(),
+
+                                                 ReporterProfile = (from profile in _context.UserProfile
+                                                                    where profile.UserId == news.CreatedId
+                                                                    select new UserLinkedProfile()
+                                                                    {
+                                                                        ProfileId = profile.UserId,
+                                                                        ProfilePicture = profile.ProfilePicture,
+                                                                        UserBio = profile.UserBio,
+                                                                        DisplayName = profile.DisplayName,
+                                                                    }).AsQueryable().FirstOrDefault(),
+                                                 RelatedNews = (from relatedNews in _context.NewsPost
+                                                                where relatedNews.CategoryId == categoryId
+                                                                && relatedNews.Id != newsId
+                                                                select new VMNewsFrontModel()
+                                                                {
+                                                                    Id = relatedNews.Id,
+                                                                    Title = relatedNews.Title,
+                                                                    CategoryInfo = (from catInfo in _context.NewsCategories
+                                                                                    where catInfo.Id == categoryId
+                                                                                    select new VMNewsCategory()
+                                                                                    {
+                                                                                        Category = catInfo.CategoryName,
+                                                                                        CategorySlug = catInfo.Slug
+                                                                                    }).FirstOrDefault(),
+                                                                    TitleSlug = relatedNews.TitleSlug,
+                                                                    FeaturedImage = relatedNews.FeaturedImage,
+                                                                    CreatedDate = relatedNews.CreatedDate
+                                                                }).Take(3).AsQueryable().ToList(),
+                                                 ListOfComments = (from comments in _context.NewsComment
+                                                                   let commentId = (from cmt in _context.NewsComment
+                                                                                    where cmt.NewsId == newsId
+                                                                                    select cmt.Id).FirstOrDefault()
+                                                                   where comments.NewsId == newsId
+                                                                   select new VMNewsComments()
+                                                                   {
+                                                                       CommentsDate = comments.CreatedDate,
+                                                                       Commentor = (from commentor in _context.UserProfile
+                                                                                    where commentor.UserId == comments.UserId
+                                                                                    select new UserLinkedProfile()
+                                                                                    {
+                                                                                        ProfileId = commentor.UserId,
+                                                                                        ProfilePicture = commentor.ProfilePicture,
+                                                                                        UserBio = commentor.UserBio,
+                                                                                        DisplayName = commentor.DisplayName,
+                                                                                    }).AsQueryable().FirstOrDefault(),
+                                                                       Comments = comments.Comments,
+                                                                       ListOfReply = (from replies in _context.NewsComment
+                                                                                      where replies.ReplyId == commentId
+                                                                                      select new VMNewsComments()
+                                                                                      {
+                                                                                          Commentor = (from commentor in _context.UserProfile
+                                                                                                       where commentor.UserId == replies.UserId
+                                                                                                       select new UserLinkedProfile()
+                                                                                                       {
+                                                                                                           ProfileId = commentor.UserId,
+                                                                                                           ProfilePicture = commentor.ProfilePicture,
+                                                                                                           UserBio = commentor.UserBio,
+                                                                                                           DisplayName = commentor.DisplayName,
+                                                                                                       }).AsQueryable().FirstOrDefault(),
+                                                                                          Comments = comments.Comments,
+                                                                                      }).AsQueryable().ToList()
+
+                                                                   }).AsQueryable().ToList()
+
+                                             }).FirstOrDefaultAsync();

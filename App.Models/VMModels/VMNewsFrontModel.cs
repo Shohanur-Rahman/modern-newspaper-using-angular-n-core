@@ -9,6 +9,7 @@ namespace App.Models.VMModels
         public string FeaturedImage { get; set; }
         public VMNewsCategory CategoryInfo { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public string DateDifference { get; set; }
     }
 
     public class VMNewsCategory

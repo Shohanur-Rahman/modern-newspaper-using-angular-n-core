@@ -10,5 +10,6 @@ namespace App.Models.VMModels
         public string Title { get; set; }
         public string CategorySlug { get; set; }
         public string TitleSlug { get; set; }
+        public string VideoURL { get; set; }
     }
 }

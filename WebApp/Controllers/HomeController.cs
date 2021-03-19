@@ -24,11 +24,26 @@ namespace WebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
+            VMHomeNewsViews homeNews = new VMHomeNewsViews();
             var breakingNewsResponse = await _newService.GetBreakingNews();
             IList<VMBreakingNews> breakingNews = breakingNewsResponse.data as IList<VMBreakingNews>;
-            ViewBag.BreakingNews = breakingNews;
+            homeNews.BreakingNews = breakingNews;
 
-            return View();
+            var recentThreeNewsResponse = await _newService.RecentThreeNews();
+            IList<VMNewsFrontModel> recentThree = recentThreeNewsResponse.data as IList<VMNewsFrontModel>;
+            homeNews.RecentThree = recentThree.Take(3).ToList();
+
+            homeNews.TrendingNewsFirstThree = recentThree.Skip(3).Take(3).ToList();
+            homeNews.TrendingNewsSecondTwo = recentThree.Skip(6).Take(2).ToList();
+            homeNews.TrendingNewsThirdPart = recentThree.Skip(8).Take(7).ToList();
+
+            homeNews.TrendingNewsFourthPart = recentThree.Skip(15).Take(3).ToList();
+
+            var responseVideoNews = await _newService.GetVideoNews(2, 1);
+            IList<VMNewsFrontModel> videoNews = responseVideoNews.data as IList<VMNewsFrontModel>;
+            homeNews.VideoNews = videoNews;
+
+            return View(homeNews);
         }
 
         public IActionResult Privacy()

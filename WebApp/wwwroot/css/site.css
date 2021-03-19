@@ -13,3 +13,11 @@
 .login-header small{
     font-size: 14px;
 }
+
+.reply_dailog{
+    cursor: pointer;
+}
+
+.tf_left {
+    max-width: 100px;
+}

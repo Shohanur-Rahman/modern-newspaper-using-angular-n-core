@@ -17,6 +17,7 @@ namespace App.Models.Models
         public string ShortDescription { get; set; }
         public string Description { get; set; }
         public string FeaturedImage { get; set; }
+        public string VideoURL { get; set; }
         public bool IsPublished { get; set; }
         public bool IsBreaking { get; set; }
     }

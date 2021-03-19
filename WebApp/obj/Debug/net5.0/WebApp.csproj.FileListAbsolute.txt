@@ -148,6 +148,9 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.RazorCoreGenerate.cache
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Edit.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Index.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Create.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Edit.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Create.cshtml.g.cs
@@ -177,6 +180,9 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_NewsTags.cshtm
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_RelatedNews.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_ReporterLinked.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_BreakingNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_HeroAreaNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsFirstThree.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsThirdPart.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -190,6 +196,12 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.dll
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.pdb
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
+<<<<<<< HEAD
+=======
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_VideoNewsList.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Settings\Index.cshtml.g.cs
+>>>>>>> 31a13f689efb7dfeba2c21fe0ffc33ad37acb31e
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\bin\Debug\net5.0\appsettings.Development.json
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\bin\Debug\net5.0\appsettings.json
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\bin\Debug\net5.0\WebApp.exe
@@ -340,6 +352,9 @@ D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\De
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Edit.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Index.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Create.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Edit.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Comments\Index.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\News\Create.cshtml.g.cs
@@ -351,6 +366,7 @@ D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\De
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Create.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Edit.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Index.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Settings\Index.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Tags\Create.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Tags\Edit.cshtml.g.cs
@@ -369,6 +385,11 @@ D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\De
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\News\_RelatedNews.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\News\_ReporterLinked.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_BreakingNews.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_HeroAreaNews.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsFirstThree.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsThirdPart.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_VideoNewsList.cshtml.g.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

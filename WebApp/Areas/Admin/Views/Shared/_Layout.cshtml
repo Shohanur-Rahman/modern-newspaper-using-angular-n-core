@@ -19,23 +19,24 @@
     <link rel="shortcut icon" href="~/back/assets/images/favicon.ico">
 
     <!-- App css -->
-    <link href="~/back/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/back/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.common.min.css" />
-    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.default-v2.min.css" />
-    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.custom.css" />
-    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.mobile.all.min.css" />
-    <link href="~/back/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/back/custom.css" rel="stylesheet" type="text/css" />
+    <link href="~/back/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" asp-append-version="true"/>
+    <link href="~/back/assets/css/icons.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.common.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.default-v2.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.custom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/back/kendo/css/kendo/kendo.mobile.all.min.css" asp-append-version="true" />
+    <link href="~/back/assets/css/theme.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/back/custom.css" rel="stylesheet" type="text/css" asp-append-version="true" />
     <!-- jQuery  -->
-    <script src="~/back/assets/js/jquery.min.js"></script>
-    <script src="~/back/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="~/back/assets/js/metismenu.min.js"></script>
-    <script src="~/back/assets/js/waves.js"></script>
-    <script src="~/back/assets/js/simplebar.min.js"></script>
-    <script src="~/back/kendo/js/kendo.all.min.js"></script>
-    <script src="~/back/kendo/js/kendo.all.min.js"></script>
-    <script src="~/back/kendo/js/jszip.min.js"></script>
+    <script src="~/back/assets/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/back/assets/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/back/assets/js/metismenu.min.js" asp-append-version="true"></script>
+    <script src="~/front/assets/js/notify.js" asp-append-version="true"></script>
+    <script src="~/back/assets/js/waves.js asp-append-version="true""></script>
+    <script src="~/back/assets/js/simplebar.min.js" asp-append-version="true"></script>
+    <script src="~/back/kendo/js/kendo.all.min.js" asp-append-version="true"></script>
+    <script src="~/back/kendo/js/kendo.all.min.js" asp-append-version="true"></script>
+    <script src="~/back/kendo/js/jszip.min.js" asp-append-version="true"></script>
 </head>
 
 <body>
@@ -164,11 +165,8 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item d-flex align-items-center justify-content-between"
-                               href="javascript:void(0)">
-                                <span>Inbox</span>
-                                <span>
-                                    <span class="badge badge-pill badge-info">3</span>
-                                </span>
+                               href="~/" target="_blank">
+                                <span>Visit Site</span>
                             </a>
                             <a class="dropdown-item d-flex align-items-center justify-content-between" asp-action="" asp-area="admin" asp-controller="profile">
                                 <span>Profile</span>
@@ -222,7 +220,16 @@
                             </ul>
                         </li>
                         <li>
+                            <a asp-action="" asp-area="admin" asp-controller="comments" class="waves-effect"><i class='bx bx-comment'></i><span>Comments</span></a>
+                        </li>
+                        <li>
                             <a asp-action="" asp-area="admin" asp-controller="role" class="waves-effect"><i class='bx bx-home-smile'></i><span>Roles</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"><i class="fa fa-cogs"></i><span>Settings</span></a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a asp-action="home-categories" asp-area="admin" asp-controller="settings">Home Categories</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -274,5 +281,19 @@
     <!-- App js -->
     <script src="~/back/assets/js/theme.js"></script>
     <script src="~/back/custom.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var successMeessage = "@TempData["InfoMessage"]";
+            var errorMessage = "@TempData["ErrorMessage"]";
+            if (successMeessage && successMeessage !="") {
+                $.notify(successMeessage, "success");
+            }
+
+            if (errorMessage && errorMessage !="") {
+                $.notify(errorMessage, "error");
+            }
+        });
+    </script>
 </body>
 </html>

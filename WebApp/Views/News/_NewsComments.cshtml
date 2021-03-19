@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<App.Models.VMModels.VMNewsComments>
+@{
+    var newsId = this.ViewData["NewsId"];
+}
 <div class="post-comments mt-30">
     <div class="section-title mb-30">
         <h2>@Model.Count() Comments</h2>
@@ -21,7 +24,7 @@
                             <p>
                                 @comments.Comments
                             </p>
-                            <a href="#"><i class="fas fa-reply-all"></i> Reply</a>
+                            <a class="reply_dailog" replyid="#reply_box_@comments.Id" open="false"><i class="fas fa-reply-all"></i> Reply</a>
                         </div>
                     </div>
                     <ul class="comments-reply">
@@ -47,10 +50,9 @@
 
                         <li>
                             <div class="post-comments-form mt-40 mb-40">
-                                <div class="section-title mb-30">
-                                    <h2>Recent Comments</h2>
+                                <div class="reply-box" id="reply_box_@comments.Id" style="display: none">
+                                    <partial name="_CommentsForm" model="comments" view-data='@new ViewDataDictionary(this.ViewData) { { "CommentsId", comments.Id} }' />
                                 </div>
-                                <partial name="_CommentsForm" view-data='@new ViewDataDictionary(this.ViewData) { { "NewsId", comments} }' />
                             </div>
                         </li>
                     </ul>
@@ -62,8 +64,18 @@
 
         <!-- post-comments-form -->
         <div class="post-comments-form mt-40 mb-40">
-            <partial name="_CommentsForm" view-data='@new ViewDataDictionary(this.ViewData) { { "NewsId", "5"} }' />
+            <partial name="_CommentsForm" model="new App.Models.VMModels.VMNewsComments()" />
 
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".reply_dailog").click(function () {
+            var replyBox = $(this).attr("replyid");
+            $(".reply-box").hide();
+            $(replyBox).show();
+        });
+    });
+</script>

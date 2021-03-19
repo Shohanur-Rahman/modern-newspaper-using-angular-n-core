@@ -1,25 +1,40 @@
-﻿
-<div class="row">
-    <div class="col-12">
-        <!-- Breaking News Wrapper Start -->
-        <div class="breaking__wrapper">
-            <!-- Breaking News Title -->
-            <h5 class="breaking__title ">Breaking News</h5>
-
-            <!-- Breaking Newsticker Start -->
-            <ul class="breaking__ticker-active owl-carousel">
-                <li>
-                    <a href="#">On the other hand we denounce with righteous indignation and dislike men who are so beguiled</a>
-                </li>
-                <li>
-                    <a href="#">Trump’s Inaccurate Claims About High ways the world, Immigration and Beyoncé.</a>
-                </li>
-                <li>
-                    <a href="#">Moving From Buyer to Seller, Major League Soccer Revenue In The World Wide.</a>
-                </li>
-            </ul>
-            <!-- Breaking Newsticker Start -->
+﻿@model IEnumerable<App.Models.VMModels.VMBreakingNews>
+<!-- breaking start -->
+<section class="breaking pt-25 pb-25">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="breaking__meta mb-30">
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> <span>@DateTime.Now.ToString("ddd, dd MMM yyyy")</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>New York</span></li>
+                        <li><i class="far fa-clock"></i> <span>5 Minute ago</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- Breaking News Wrapper End -->
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Breaking News Wrapper Start -->
+                <div class="breaking__wrapper">
+                    <!-- Breaking News Title -->
+                    <h5 class="breaking__title ">Breaking News</h5>
+
+                    <!-- Breaking Newsticker Start -->
+                    <ul class="breaking__ticker-active owl-carousel">
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <a href="~/news/@item.CategorySlug/@item.TitleSlug">@item.Title</a>
+                            </li>
+                        }
+                    </ul>
+                    <!-- Breaking Newsticker Start -->
+                </div>
+                <!-- Breaking News Wrapper End -->
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<!-- breaking end -->

@@ -10,7 +10,7 @@ namespace App.Models.AppContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
-
+            
         }
 
         public DbSet<Users> User { get; set; }
@@ -23,5 +23,6 @@ namespace App.Models.AppContext
         public DbSet<NewsTagMapper> NewsTagMapper { get; set; }
         public DbSet<NewsTags> NewsTags { get; set; }
         public DbSet<NewsComments> NewsComment { get; set; }
+        public DbSet<NewsPortalSetting> NewsPortalSettings { get; set; }
     }
 }

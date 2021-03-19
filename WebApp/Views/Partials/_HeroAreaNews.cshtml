@@ -1,0 +1,42 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsFrontModel>
+<!-- hero-area start -->
+
+<section class="hero-area">
+    <div class="container">
+        <div class="row">
+            @{
+                int iteration = 0;
+                var divClass = "";
+                foreach (var news in Model)
+                {
+                    if (iteration == 0)
+                    {
+                        divClass = "col-lg-6 col-md-12";
+                    }
+                    else
+                    {
+                        divClass = "col-lg-3 col-md-6";
+                    }
+
+                    <div class="@divClass _@news.Id">
+                        <div class="hero pos-relative mb-30">
+                            <a href="~/news/@news.CategorySlug/@news.TitleSlug">
+                                <div class="hero__thumb" data-overlay="dark-gradient">
+                                    <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" />
+                                </div>
+                            </a>
+                            <div class="hero__text hero__text-small">
+                                <h3 class="pr-100"><a href="~/news/@news.CategorySlug/@news.TitleSlug">@news.Title</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    iteration++;
+                }
+
+
+            }
+        </div>
+    </div>
+</section>
+<!-- hero-area end -->
