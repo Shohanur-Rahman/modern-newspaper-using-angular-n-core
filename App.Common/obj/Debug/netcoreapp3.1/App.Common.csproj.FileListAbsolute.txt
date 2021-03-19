@@ -6,3 +6,12 @@ F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.AssemblyIn
 F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.csproj.CoreCompileInputs.cache
 F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.dll
 F:\dot net\CompleteBlog\App.Common\obj\Debug\netcoreapp3.1\App.Common.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\bin\Debug\netcoreapp3.1\App.Common.deps.json
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\bin\Debug\netcoreapp3.1\App.Common.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\bin\Debug\netcoreapp3.1\App.Common.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.csprojAssemblyReference.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.AssemblyInfoInputs.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.AssemblyInfo.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.csproj.CoreCompileInputs.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.Common\obj\Debug\netcoreapp3.1\App.Common.pdb

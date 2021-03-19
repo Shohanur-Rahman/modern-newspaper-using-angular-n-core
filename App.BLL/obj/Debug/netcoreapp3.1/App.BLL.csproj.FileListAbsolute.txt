@@ -12,3 +12,17 @@ F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CoreCompi
 F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CopyComplete
 F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.dll
 F:\dot net\CompleteBlog\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.deps.json
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.BLL.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.Common.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.Models.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.Common.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\bin\Debug\netcoreapp3.1\App.Models.pdb
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csprojAssemblyReference.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.AssemblyInfoInputs.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.AssemblyInfo.cs
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CoreCompileInputs.cache
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.csproj.CopyComplete
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.dll
+D:\Personal & Other Projects\modern-newspaper-using-angular-n-core\App.BLL\obj\Debug\netcoreapp3.1\App.BLL.pdb

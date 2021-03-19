@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\dot net\\CompleteBlog\\WebApp\\WebApp.csproj": {}
+    "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj": {
+    "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj",
+        "projectUniqueName": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj",
         "projectName": "App.BLL",
-        "projectPath": "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj",
-        "packagesPath": "C:\\Users\\Shohanur\\.nuget\\packages\\",
-        "outputPath": "F:\\dot net\\CompleteBlog\\App.BLL\\obj\\",
+        "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj",
+        "packagesPath": "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shohanur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAIFUL-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +31,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj": {
-                "projectPath": "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj"
+              "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj": {
+                "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj"
               },
-              "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj": {
-                "projectPath": "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj"
+              "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj": {
+                "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj"
               }
             }
           }
@@ -71,21 +74,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj": {
+    "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj",
+        "projectUniqueName": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj",
         "projectName": "App.Common",
-        "projectPath": "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj",
-        "packagesPath": "C:\\Users\\Shohanur\\.nuget\\packages\\",
-        "outputPath": "F:\\dot net\\CompleteBlog\\App.Common\\obj\\",
+        "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj",
+        "packagesPath": "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shohanur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAIFUL-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,21 +131,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj": {
+    "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj",
+        "projectUniqueName": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj",
         "projectName": "App.Models",
-        "projectPath": "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj",
-        "packagesPath": "C:\\Users\\Shohanur\\.nuget\\packages\\",
-        "outputPath": "F:\\dot net\\CompleteBlog\\App.Models\\obj\\",
+        "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj",
+        "packagesPath": "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shohanur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAIFUL-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,21 +216,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\dot net\\CompleteBlog\\WebApp\\WebApp.csproj": {
+    "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\dot net\\CompleteBlog\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "F:\\dot net\\CompleteBlog\\WebApp\\WebApp.csproj",
-        "packagesPath": "C:\\Users\\Shohanur\\.nuget\\packages\\",
-        "outputPath": "F:\\dot net\\CompleteBlog\\WebApp\\obj\\",
+        "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\WebApp\\WebApp.csproj",
+        "packagesPath": "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shohanur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SAIFUL-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -235,8 +247,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj": {
-                "projectPath": "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj"
+              "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj": {
+                "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj"
               }
             }
           }
@@ -306,7 +318,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
