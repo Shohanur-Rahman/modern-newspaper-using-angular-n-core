@@ -5,8 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Helper;
 using WebApp.IServiceManager;
+using WebApp.ServiceManager;
 
-namespace WebApp.ServiceManager
+namespace WebApp.ServiceCollection
 {
     public static class ServiceCollection
     {
@@ -19,6 +20,7 @@ namespace WebApp.ServiceManager
             services.AddTransient<INewsFrontService, NewsFrontServiceManager>();
             services.AddTransient<IUserProfileService, UserProfileService>();
             services.AddTransient<ICommentsServiceManager, CommentsServiceManager>();
+            services.AddTransient<INewsSettingsService, NewsSettingsServiceManager>();
             return services;
         }
     }

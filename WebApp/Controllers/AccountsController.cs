@@ -98,7 +98,7 @@ namespace WebApp.Controllers
                         authProperties);
 
 
-                    DisplayMessageHelper.SuccessMessageSetOrGet(this, true, ConstantUserMessages.REGISTRATION_SUCCESS);
+                    DisplayMessageHelper.SuccessMessageSetOrGet(this, true, ConstantUserMessages.LOGIN_SUCCESS);
                     return RedirectToAction("", "dashboard", new { area = "admin" });
                 }
 

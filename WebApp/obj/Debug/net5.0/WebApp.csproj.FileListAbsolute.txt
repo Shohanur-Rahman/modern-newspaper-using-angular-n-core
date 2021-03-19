@@ -198,3 +198,4 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.pdb
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_VideoNewsList.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Settings\Index.cshtml.g.cs

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace App.Models.Models
+namespace App.Models.VMModels
 {
-    public class NewsPortalSetting
+    public class VMNewsPaperSettings
     {
         public int Id { get; set; }
         public long HomeNewsCategory1 { get; set; }
