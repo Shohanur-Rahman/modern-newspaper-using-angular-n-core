@@ -233,9 +233,9 @@ namespace App.BLL.BLLManager
 
                 var comment = await _context.NewsComment.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
 
-                if(comment != null)
+                if (comment != null)
                 {
-                    comment = MapNewsComments(comment,model);
+                    comment = MapNewsComments(comment, model);
                     _context.Entry(comment).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                     return result = ResponseMapping.GetResponseMessage(comment, (int)ResponseStatus.Success, ConstantMessaages.SuccessMessage);
@@ -258,7 +258,7 @@ namespace App.BLL.BLLManager
             comment.UserId = model.UserId;
             comment.Comments = (!string.IsNullOrEmpty(model.Comments)) ? model.Comments : comment.Comments;
             comment.CreatedDate = (model.CommentsDate == null) ? comment.CreatedDate : model.CommentsDate;
-            comment.EditedDate= (model.EditedDate == null) ? comment.EditedDate : model.EditedDate;
+            comment.EditedDate = (model.EditedDate == null) ? comment.EditedDate : model.EditedDate;
             comment.EditedId = (model.EditedId == null) ? comment.EditedId : model.EditedId;
             comment.IsApprove = model.IsApprove;
 
@@ -298,5 +298,39 @@ namespace App.BLL.BLLManager
             }
         }
 
+        public async Task<ResponseMessage> GetVideoNews(int perPage, int pageNumber)
+        {
+            ResponseMessage result = new ResponseMessage();
+            try
+            {
+                var listOfNews = await (from news in _context.NewsPost
+                                        where (string.IsNullOrEmpty(news.VideoURL)) == false
+                                        orderby news.Id descending
+                                        select new VMNewsFrontModel()
+                                        {
+                                            Id = news.Id,
+                                            Title = news.Title,
+                                            CategorySlug = (from sl in _context.NewsCategories where sl.Id == news.CategoryId select sl.Slug).FirstOrDefault(),
+                                            TitleSlug = news.TitleSlug,
+                                            FeaturedImage = news.FeaturedImage,
+                                            CreatedDate = news.CreatedDate,
+                                            VideoURL=news.VideoURL,
+                                            DateDifference = (DateTime.Now - news.CreatedDate.Value).TotalMinutes.ToString()
+
+                                        }).Skip((pageNumber - 1) * perPage).Take(perPage).ToListAsync();
+
+                if (listOfNews == null)
+                {
+                    return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ConstantMessaages.FailRetrieve);
+                }
+
+                return result = ResponseMapping.GetResponseMessage(listOfNews, (int)ResponseStatus.Success, ConstantMessaages.RetrieveSuccess);
+
+            }
+            catch (Exception ex)
+            {
+                return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ex.Message.ToString());
+            }
+        }
     }
 }

@@ -155,6 +155,9 @@ namespace App.Models.Migrations
                     b.Property<string>("TitleSlug")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("VideoURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("NewsPosts");

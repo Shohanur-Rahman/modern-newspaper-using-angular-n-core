@@ -9,5 +9,6 @@ namespace App.Models.VMModels
     public class VMUserProfileModel: UserProfile
     {
         public IFormFile NIDImage { get; set; }
+        public IFormFile UserImage { get; set; }
     }
 }

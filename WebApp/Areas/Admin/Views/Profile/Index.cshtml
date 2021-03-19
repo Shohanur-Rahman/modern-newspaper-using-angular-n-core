@@ -18,6 +18,41 @@
 </div>
 <form class="w-100" method="post" asp-action="create" asp-area="admin" asp-controller="profile" enctype="multipart/form-data">
     <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">Profile Overview</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="form-group">
+                                <label>Featured Image</label>
+                                <div class="file-upload">
+                                    <img src="@Url.Content(string.IsNullOrEmpty(Model.ProfilePicture) == false ? Model.ProfilePicture : "back/No_Image_Available.jpg")" id="imgFeaturedImage" />
+                                    <!--place input file last !-->
+                                    @if (string.IsNullOrEmpty(Model.ProfilePicture) == false)
+                                    {
+                                        <input type="file" id="filePostImage" class="form-control image_preview" preview="#imgFeaturedImage" asp-for="UserImage">
+                                    }
+                                    else
+                                    {
+                                        <input type="file" id="filePostImage" class="form-control image_preview" preview="#imgFeaturedImage" asp-for="UserImage" required>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-8">
+                            <div class="form-group">
+                                <p>@Model.UserBio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         @Html.AntiForgeryToken()
         @Html.HiddenFor(m => m.Id)
         <div class="col-6 d-flex">

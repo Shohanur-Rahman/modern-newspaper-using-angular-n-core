@@ -69,7 +69,8 @@ namespace App.BLL.BLLManager
                                              NID = profile.NID,
                                              UserBio = profile.UserBio,
                                              DisplayName = profile.DisplayName,
-                                             ProfileDescription = profile.ProfileDescription
+                                             ProfileDescription = profile.ProfileDescription,
+                                             ProfilePicture=profile.ProfilePicture
 
                                          }).FirstOrDefaultAsync();
 
@@ -137,6 +138,7 @@ namespace App.BLL.BLLManager
             profile.DisplayName = model.DisplayName;
             profile.ProfileDescription = model.ProfileDescription;
             profile.AddressDetails = model.AddressDetails;
+            profile.ProfilePicture = (!string.IsNullOrEmpty(model.ProfilePicture)) ? model.ProfilePicture : profile.ProfilePicture;
             profile.NIDPhoto = (string.IsNullOrEmpty(model.NIDPhoto) == false) ? model.NIDPhoto : profile.NIDPhoto;
             profile.CreatedDate = (model.CreatedDate == null) ? profile.CreatedDate : model.CreatedDate;
             profile.CreatedId = (model.CreatedId == null) ? profile.CreatedId : model.CreatedId;

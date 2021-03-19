@@ -32,6 +32,11 @@ namespace WebApp.ServiceManager
             return await _newsFront.GetRelatedNewsByCategory(categoryId);
         }
 
+        public async Task<ResponseMessage> GetVideoNews(int perPage, int pageNumber)
+        {
+            return await _newsFront.GetVideoNews(perPage, pageNumber);
+        }
+
         public async Task<ResponseMessage> RecentThreeNews()
         {
             return await _newsFront.RecentThreeNews();

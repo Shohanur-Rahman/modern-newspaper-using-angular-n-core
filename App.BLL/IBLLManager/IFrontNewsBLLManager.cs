@@ -15,5 +15,6 @@ namespace App.BLL.IBLLManager
         Task<ResponseMessage> SaveNewsComment(VMNewsComments model);
         Task<ResponseMessage> UpdateNewsComment(VMNewsComments model);
         Task<ResponseMessage> RecentThreeNews();
+        Task<ResponseMessage> GetVideoNews(int perPage, int pageNumber);
     }
 }
