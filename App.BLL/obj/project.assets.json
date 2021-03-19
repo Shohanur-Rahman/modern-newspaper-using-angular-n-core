@@ -7341,19 +7341,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shohanur\\.nuget\\packages\\": {}
+    "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj",
+      "projectUniqueName": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj",
       "projectName": "App.BLL",
-      "projectPath": "F:\\dot net\\CompleteBlog\\App.BLL\\App.BLL.csproj",
-      "packagesPath": "C:\\Users\\Shohanur\\.nuget\\packages\\",
-      "outputPath": "F:\\dot net\\CompleteBlog\\App.BLL\\obj\\",
+      "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\App.BLL.csproj",
+      "packagesPath": "C:\\Users\\SAIFUL-PC\\.nuget\\packages\\",
+      "outputPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.BLL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Shohanur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAIFUL-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7367,11 +7371,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj": {
-              "projectPath": "F:\\dot net\\CompleteBlog\\App.Common\\App.Common.csproj"
+            "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj": {
+              "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Common\\App.Common.csproj"
             },
-            "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj": {
-              "projectPath": "F:\\dot net\\CompleteBlog\\App.Models\\App.Models.csproj"
+            "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj": {
+              "projectPath": "D:\\Personal & Other Projects\\modern-newspaper-using-angular-n-core\\App.Models\\App.Models.csproj"
             }
           }
         }
