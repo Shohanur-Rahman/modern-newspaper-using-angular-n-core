@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using App.Common.Static;
 using App.Common.Enums;
 using App.Common.Constant;
+using App.Models.Models;
 
 namespace App.BLL.BLLManager
 {
@@ -42,6 +43,41 @@ namespace App.BLL.BLLManager
                 }
 
                 return result = ResponseMapping.GetResponseMessage(listOfNews, (int)ResponseStatus.Success, ConstantMessaages.RetrieveSuccess);
+
+            }
+            catch (Exception ex)
+            {
+                return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ex.Message.ToString());
+            }
+        }
+
+        public async Task<ResponseMessage> SaveUpdateCategorySettings(VMNewsPaperSettings model)
+        {
+            ResponseMessage result = new ResponseMessage();
+            try
+            {
+                var existingSettings = await _context.NewsPortalSettings.FirstOrDefaultAsync();
+
+                if (existingSettings == null)
+                {
+                    NewsPortalSetting settings = new NewsPortalSetting();
+                    settings.HomeNewsCategory1 = model.HomeNewsCategory1;
+                    settings.HomeNewsCategory2 = model.HomeNewsCategory2;
+                    settings.HomeNewsCategory3 = model.HomeNewsCategory3;
+                    _context.NewsPortalSettings.Add(settings);
+                    await _context.SaveChangesAsync();
+
+                    return result = ResponseMapping.GetResponseMessage(settings, (int)ResponseStatus.Success, ConstantMessaages.SuccessMessage);
+                }
+                else
+                {
+                    existingSettings.HomeNewsCategory1 = model.HomeNewsCategory1;
+                    existingSettings.HomeNewsCategory2 = model.HomeNewsCategory2;
+                    existingSettings.HomeNewsCategory3 = model.HomeNewsCategory3;
+                    await _context.SaveChangesAsync();
+                    return result = ResponseMapping.GetResponseMessage(existingSettings, (int)ResponseStatus.Success, ConstantMessaages.SuccessMessage);
+                }
+
 
             }
             catch (Exception ex)

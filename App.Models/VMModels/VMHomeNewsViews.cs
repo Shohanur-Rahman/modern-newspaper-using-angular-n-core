@@ -13,5 +13,6 @@ namespace App.Models.VMModels
         public IList<VMNewsFrontModel> TrendingNewsThirdPart { get; set; }
         public IList<VMNewsFrontModel> TrendingNewsFourthPart { get; set; }
         public IList<VMNewsFrontModel> VideoNews { get; set; }
+        public VMHomeCategoryNews ListOfCategoryNews { get; set; }
     }
 }

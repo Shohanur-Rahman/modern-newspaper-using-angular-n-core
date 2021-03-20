@@ -43,6 +43,11 @@ namespace WebApp.Controllers
             IList<VMNewsFrontModel> videoNews = responseVideoNews.data as IList<VMNewsFrontModel>;
             homeNews.VideoNews = videoNews;
 
+
+            var responseCategoryNews = await _newService.GetHomeCategoryNews();
+            VMHomeCategoryNews categoryNews = responseCategoryNews.data as VMHomeCategoryNews;
+            homeNews.ListOfCategoryNews = categoryNews;
+
             return View(homeNews);
         }
 

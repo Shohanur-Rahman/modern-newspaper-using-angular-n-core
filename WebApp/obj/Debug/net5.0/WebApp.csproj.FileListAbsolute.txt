@@ -162,6 +162,7 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Profile\
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Edit.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Role\Index.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Settings\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Tags\Create.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Tags\Edit.cshtml.g.cs
@@ -181,8 +182,11 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_RelatedNews.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\News\_ReporterLinked.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_BreakingNews.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_HeroAreaNews.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_HomeCategoryNews.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsFirstThree.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_TrendingNewsThirdPart.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_VideoNewsList.cshtml.g.cs
+F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -196,6 +200,3 @@ F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.dll
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.pdb
 F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
-F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
-F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Views\Partials\_VideoNewsList.cshtml.g.cs
-F:\dot net\CompleteBlog\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Views\Settings\Index.cshtml.g.cs

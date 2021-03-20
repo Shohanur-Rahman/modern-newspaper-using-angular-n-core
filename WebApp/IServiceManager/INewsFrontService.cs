@@ -15,5 +15,6 @@ namespace WebApp.IServiceManager
         Task<ResponseMessage> SaveUpdateNewsComment(VMNewsComments model);
         Task<ResponseMessage> RecentThreeNews();
         Task<ResponseMessage> GetVideoNews(int perPage, int pageNumber);
+        Task<ResponseMessage> GetHomeCategoryNews();
     }
 }

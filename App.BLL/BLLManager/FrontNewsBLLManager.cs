@@ -174,7 +174,6 @@ namespace App.BLL.BLLManager
             try
             {
                 var listOfNews = await (from news in _context.NewsPost
-                                        where news.IsBreaking == true
                                         select new VMNewsFrontModel()
                                         {
                                             Id = news.Id,
@@ -314,7 +313,7 @@ namespace App.BLL.BLLManager
                                             TitleSlug = news.TitleSlug,
                                             FeaturedImage = news.FeaturedImage,
                                             CreatedDate = news.CreatedDate,
-                                            VideoURL=news.VideoURL,
+                                            VideoURL = news.VideoURL,
                                             DateDifference = (DateTime.Now - news.CreatedDate.Value).TotalMinutes.ToString()
 
                                         }).Skip((pageNumber - 1) * perPage).Take(perPage).ToListAsync();
@@ -332,5 +331,61 @@ namespace App.BLL.BLLManager
                 return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ex.Message.ToString());
             }
         }
+
+        private IList<VMNewsFrontModel> GetListOfNewsByCategory(long catId)
+        {
+
+            var listOfNews = (from news in _context.NewsPost
+                                    where news.CategoryId == catId
+                                    select new VMNewsFrontModel()
+                                    {
+                                        Id = news.Id,
+                                        Title = news.Title,
+                                        CategoryInfo = (from catInfo in _context.NewsCategories
+                                                        where catInfo.Id == news.CategoryId
+                                                        select new VMNewsCategory()
+                                                        {
+                                                            Category = catInfo.CategoryName,
+                                                            CategorySlug = catInfo.Slug
+                                                        }).FirstOrDefault(),
+                                        TitleSlug = news.TitleSlug,
+                                        FeaturedImage = news.FeaturedImage
+                                    }).Take(4).ToList();
+
+            return listOfNews;
+        }
+
+        public async Task<ResponseMessage> GetHomeCategoryNews()
+        {
+            ResponseMessage result = new ResponseMessage();
+            try
+            {
+                VMHomeCategoryNews newsResults = new VMHomeCategoryNews();
+
+                var settingsRow = await _context.NewsPortalSettings.FirstOrDefaultAsync();
+
+                
+                var listOne = GetListOfNewsByCategory(settingsRow.HomeNewsCategory1);
+                var listTwo = GetListOfNewsByCategory(settingsRow.HomeNewsCategory2);
+                var listThree = GetListOfNewsByCategory(settingsRow.HomeNewsCategory3);
+
+                newsResults.listOfNewsOne = listOne;
+                newsResults.listOfNewsTwo = listTwo;
+                newsResults.listOfNewsThree = listThree;
+
+                if (newsResults == null)
+                {
+                    return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ConstantMessaages.FailRetrieve);
+                }
+
+                return result = ResponseMapping.GetResponseMessage(newsResults, (int)ResponseStatus.Success, ConstantMessaages.RetrieveSuccess);
+
+            }
+            catch (Exception ex)
+            {
+                return result = ResponseMapping.GetResponseMessage(null, (int)ResponseStatus.Fail, ex.Message.ToString());
+            }
+        }
+
     }
 }

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<App.Models.VMModels.VMNewsFrontModel>
+<div class="section-title mb-30">
+    <h2>Science</h2>
+</div>
+<div class="cat-sm-post">
+    @{
+        int iteration = 0;
+        foreach (var news in Model)
+        {
+            if (iteration == 0)
+            {
+                <div class="postbox mb-25">
+                    <div class="postbox__thumb">
+                        <a href="~/news/@news.CategoryInfo.CategorySlug/@news.TitleSlug">
+                            <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" />
+                        </a>
+                    </div>
+                    <div class="postbox__text pt-20">
+                        <h4 class="title-18 pr-0">
+                            <a href="~/news/@news.CategoryInfo.CategorySlug/@news.TitleSlug">@news.Title</a>
+                        </h4>
+                        @if (news.CreatedDate != null)
+                        {
+                            <div class="postbox__text-meta pb-10">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>@news.CreatedDate.Value.ToString("dd MMM yyyy")</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                <div class="post__small mb-30">
+                    <div class="post__small-thumb f-left">
+                        <a href="~/news/@news.CategoryInfo.CategorySlug/@news.TitleSlug">
+                            <img src="@Url.Content(string.IsNullOrEmpty(news.FeaturedImage) == false ? news.FeaturedImage : "~/back/No_Image_Available.jpg")" alt="@news.Title" class="small-thumb" />
+                        </a>
+                    </div>
+                    <div class="post__small-text fix pl-10">
+                        <h4 class="title-16 pr-0 mt-0">
+                            <a href="~/news/@news.CategoryInfo.CategorySlug/@news.TitleSlug">@news.Title</a>
+                        </h4>
+                        @if (news.CreatedDate != null)
+                        {
+                            <div class="post__small-text-meta">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>@news.CreatedDate.Value.ToString("dd MMM yyyy")</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+            }
+
+            iteration++;
+
+
+        }
+    }
+
+</div>

@@ -1,5 +1,6 @@
 ﻿using App.BLL.IBLLManager;
 using App.Common.Response;
+using App.Models.VMModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace WebApp.ServiceManager
         public async Task<ResponseMessage> GetNewsPaperSettingsRow()
         {
             return await _settingsBLL.GetNewsPaperSettingsRow();
+        }
+
+        public async Task<ResponseMessage> SaveUpdateCategorySettings(VMNewsPaperSettings model)
+        {
+            return await _settingsBLL.SaveUpdateCategorySettings(model);
         }
     }
 }

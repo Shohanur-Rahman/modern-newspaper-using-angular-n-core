@@ -22,6 +22,11 @@ namespace WebApp.ServiceManager
             return await _newsFront.GetBreakingNews();
         }
 
+        public async Task<ResponseMessage> GetHomeCategoryNews()
+        {
+            return await _newsFront.GetHomeCategoryNews();
+        }
+
         public async Task<ResponseMessage> GetNewsDetailsByCategoryAndTitle(string catSlug, string titleSlug)
         {
             return await _newsFront.GetNewsDetailsByCategoryAndTitle(catSlug, titleSlug);
